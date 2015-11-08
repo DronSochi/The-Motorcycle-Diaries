@@ -17,11 +17,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "shell",
-    inline: "/home/vagrant/src/deploy/vagrant/prepare.sh"
+    inline: "/home/vagrant/src/deploy/vagrant/prepare.sh",
+    binary: false
 
   config.vm.provision "shell",
     inline: "/home/vagrant/src/deploy/vagrant/venv.sh",
-    privileged: false
+    privileged: false,
+    binary: false
 
   # config.vm.provision "shell",
   #   inline: "/home/vagrant/src/deploy/vagrant/static.sh",
